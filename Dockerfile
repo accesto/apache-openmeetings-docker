@@ -20,8 +20,8 @@ RUN cd /opt && ln -s jodconverter-core-3.0-beta-4 jod
 RUN mkdir /opt/apache-openmeetings
 WORKDIR /opt/apache-openmeetings
 
-ADD http://ftp.piotrkosoft.net/pub/mirrors/ftp.apache.org/openmeetings/3.1.1/bin/apache-openmeetings-3.1.1.zip /opt/apache-openmeetings
-RUN unzip apache-openmeetings-3.1.1.zip && rm apache-openmeetings-3.1.1.zip
+ADD http://archive.apache.org/dist/openmeetings/3.0.7/bin/apache-openmeetings-3.0.7.zip /opt/apache-openmeetings
+RUN unzip apache-openmeetings-3.0.7.zip && rm apache-openmeetings-3.0.7.zip
 # run
 EXPOSE 5080 1935 8088 8443 5443
 
