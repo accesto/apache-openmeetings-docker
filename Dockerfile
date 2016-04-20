@@ -22,6 +22,13 @@ WORKDIR /opt/apache-openmeetings
 
 ADD http://archive.apache.org/dist/openmeetings/3.0.7/bin/apache-openmeetings-3.0.7.zip /opt/apache-openmeetings
 RUN unzip apache-openmeetings-3.0.7.zip && rm apache-openmeetings-3.0.7.zip
+
+ADD http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.zip /opt/apache-openmeetings
+RUN unzip mysql-connector-java-5.1.38.zip && rm mysql-connector-java-5.1.38.zip
+RUN mv mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar webapps/openmeetings/WEB-INF/lib/mysql-connector-java-5.1.38-bin.jar
+RUN rm -R mysql-connector-java-5.1.38
+
+
 # run
 EXPOSE 5080 1935 8088 8443 5443
 
